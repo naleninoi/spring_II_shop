@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your shopping cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" th:href="@{/products}" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="#" th:href="@{/cart}" class="nav-link">Your cart</a></li>
+            <li class="nav-item"><a href="#" th:href="@{/users}" class="nav-link active" aria-current="page">Admin</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+    </header>
+    <div class="row" th:each="user : ${users}">
+        <div class="col" th:text="${user.id}"></div>
+        <div class="col" th:text="${user.email}"></div>
+        <div class="col" th:text="${user.name}"></div>
+        <div class="col" th:text="${user.surname}"></div>
+    </div>
+
+</div>
+</body>
+</html>

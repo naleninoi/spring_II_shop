@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your shopping cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" th:href="@{/products}" class="nav-link">Products</a></li>
+            <li class="nav-item"><a href="#" th:href="@{/cart}" class="nav-link active" aria-current="page">Your cart</a></li>
+            <li class="nav-item"><a href="#" th:href="@{/users}" class="nav-link">Admin</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li th:text="|Welcome back, ${userFullName}|"></li>
+        </ul>
+    </header>
+    <div class="row" th:each="item : ${positions}">
+        <div class="col" th:text="${item.productTitle}"></div>
+        <div class="col" th:text="${item.productQuantity}"></div>
+        <div class="col" th:text="${item.cost}"></div>
+    </div>
+
+</div>
+</body>
+</html>
